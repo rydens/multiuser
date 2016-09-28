@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# This is a simple program that goes out, deletes /usr/bin/push,
+# and replaces it with the version located in this folder.
+# Because it made things easier for when I update.
+
+import os
+import colors as c
+
+def checkconfirm():
+    confirm = input(c.r + '> ' + c.cyan)
+    if confirm == 'yes':
+        os.system('sudo rm /usr/bin/push')
+        os.system('cp ./push /usr/bin/')
+        print(c.m + 'Done!')
+        exit()
+    elif confirm == 'no':
+        print(c.m + 'Okay, thanks for exiting cleanly!')
+        exit()
+    else:
+        print(c.r + 'Invalid command! Try "yes" or "no".')
+        checkconfirm()
+
+if os.getuid() != 0:
+    print(c.r + 'Need to run with root privleges!')
+else:
+    print(c.g + 'Okay, are you SURE you want to do this?')
+    print(c.g + '"yes" or "no"')
+    checkconfirm()
