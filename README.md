@@ -24,6 +24,12 @@ Then, it copies everything from this repo back up there.
 Why? Because this allows me to do every bit of development from here,
 then send it back so everyone can use it.
 
+
+## `colors.py`
+This is just a python library of colors, to be used for solarized
+terminals. It just makes things look fancy.
+
+
 ## There will definitely be more, it's just in the works.
 *Thanks,*
 > *rydens*
