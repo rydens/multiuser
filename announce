@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import colors as c
+# This simply allows you to put in a message, and it will send it to
+# an "announcement.txt" file in everyone's bin.
 
 
 print('it worked yay')
