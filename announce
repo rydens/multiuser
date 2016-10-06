@@ -4,11 +4,13 @@ import os
 # This simply allows you to put in a message, and it will send it to
 # an "announcement.txt" file in everyone's bin.
 
-
+path = '~/repos/multiuser/qannouncement'
 
 print(c.g + 'Enter your message')
 message = input(c.cyan)
 
-os.system('echo "#!/usr/bin/env python3\n')
-os.syetm('\n')
-os.system('echo print(' + str(message) + ' >> ~/announcement')
+os.system('echo "#!/usr/bin/env python3\n" >> ' + path)
+os.system('echo test = ')
+os.system('\n >> ' + path)
+os.system('''echo "print(test)" >> ''' + path)
+os.system('chmod +x ' + path)
