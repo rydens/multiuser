@@ -10,31 +10,41 @@ print(c.g + 'Enter your message')
 message = input(c.cyan)
 
 # Initial Setup Stuff
-os.system('echo "#!/usr/bin/env python3\n" >> ' + path)
-os.system('echo "import colors as c"\n >> ' + path)
-os.system('echo "import os"\n >> ' + path)
+os.system('echo "#!/usr/bin/env python3" >> ' + path)
+os.system('echo "import colors as c" >> ' + path)
+os.system('echo "import os" >> ' + path)
 os.system('echo "\n" >> ' + path)
 
 # The message variable
-os.system("""echo "message = '""" + str(message) + """'\n" >> """ + path)
+os.system("""echo "message = '""" + str(message) + """'" >> """ + path)
 os.system('\n >> ' + path)
 
 # The delete confirmation function
-os.system('''echo "confirmdel():\n" >> ''' + path)
-os.system('''echo "    delete = input(c.red + '>' + c.cyan).lower()\n" >> ''' + path)
-os.system('''echo "    if delete == 'yes':\n" >> ''' + path)
-os.system('''echo "        print(c.g + 'Deleting...')\n" >> ''' + path)
-os.system('''echo "        os.system('rm ~/repos/multiuser/qannouncement')\n" >> ''' + path)
-os.system()
-os.system()
-os.system()
+os.system('''echo "def confirmdel():" >> ''' + path)
+os.system('''echo "    delete = input(c.red + '>' + c.cyan).lower()" >> ''' + path)
+os.system('''echo "    if delete == 'yes':" >> ''' + path)
+os.system('''echo "        print(c.g + 'Deleting...')" >> ''' + path)
+os.system('''echo "        os.system('rm ~/repos/multiuser/qannouncement')" >> ''' + path)
+os.system('''echo "    elif delete == 'no':" >> ''' + path)
+os.system('''echo "        print(c.g + 'Okay, but if another announcement comes around, stuff will break!')" >> ''' + path)
+os.system('''echo "        exit()" >> ''' + path)
+os.system('''echo "    else:" >> ''' + path)
+os.system('''echo "        print(c.red + 'Sorry, not an answer. Try "yes" or "no".')" >> ''' + path)
+os.system('''echo "        confirmdel()" >> ''' + path)
+os.system('''echo "\n" >> ''' + path)
 
+# The main printing thing
+os.system('''echo "print(c.g + 'Oops, we got a message!')" >> ''' + path)
+os.system('''echo "print(c.g + 'Here it is:')" >> ''' + path)
+os.system('''echo "print(c.magenta + message)" >> ''' + path)
+os.system('''echo "print()" >> ''' + path)
+os.system('''echo "print(c.g + 'Would you like to delete it?')" >> ''' + path)
+os.system('''echo "confirmdel()" >> ''' + path)
 
-
-
-
-
-
-
-os.system('''echo "print(test)" >> ''' + path)
+# Almost done, chmods the file
 os.system('chmod +x ' + path)
+
+# Final "sent" message
+print(c.m + 'Sent!')
+exit()
+
