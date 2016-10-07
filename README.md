@@ -36,13 +36,13 @@ It writes an `announcement` program, and all it does right now is make
 a file that prints the message, then asks if you want it deleted. It
 only works for the person that runs it as of now.
 
-## `qannouncement`
+## `exannounce`
 An example of the `announcement` file that would be created with
 `announce`.
 
 ## `del`
-A very short program to easily delete the `qannouncement` file from
-testing.
+A very short program to easily delete the `exannounce` file from when
+I was testing.
 
 ## There will definitely be more, it's just in the works.
 *Thanks,*
