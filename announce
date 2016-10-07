@@ -2,7 +2,7 @@
 import colors as c
 import os
 # This simply allows you to put in a message, and it will send it to
-# an "announcement.txt" file in everyone's bin.
+# an "announcement" file in everyone's bin.
 
 path = '~/repos/multiuser/qannouncement'
 
