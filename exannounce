@@ -2,19 +2,20 @@
 import colors as c
 import os
 
-message = 'jkklgjlkdfjgklfdjk'
+message = 'The Best Announcement System :P'
 
 def confirmdel():
     delete = input(c.red + '> ' + c.cyan).lower()
     if delete == 'yes':
         print(c.g + 'Deleting...')
-        os.system('rm ~/repos/multiuser/qannouncement')
+        os.system('rm ~/repos/multiuser/exannounce')
     elif delete == 'no':
         print(c.g + 'Okay, but if another announcement comes around, stuff will break!')
         exit()
     else:
-        print(c.red + 'Sorry, not an answer. Try "yes" or "no".')
+        print(c.red + 'Sorry, not an answer. Try yes or no.')
         confirmdel()
+
 
 print(c.g + 'Oops, we got a message!')
 print(c.g + 'Here it is:')
