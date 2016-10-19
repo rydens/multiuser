@@ -16,13 +16,12 @@ and I gave him an account on my server so he could actually
 make some websites. This just makes things easier for everyone.
 
 
-## `pushpush`, soon to be `multiupdate`
-`pushpush`, right now, just goes out to `/usr/bin`, where this
-stuff will be kept so others can use it, and it deletes all the files.
-Then, it copies everything from this repo back up there.
+## `multiupdate`
+`multiupdate` is a simple program that goes out to where these programs are stored so that anyone can access them, `/usr/bin/multiuser`, and deletes all the contents there.
 
-Why? Because this allows me to do every bit of development from here,
-then send it back so everyone can use it.
+Then, it copies all the stuff from this repository back up there.
+
+Why? Because this allows me to do every bit of development from here, then send it back so everyone can use it.
 
 
 ## `colors.py`
@@ -30,11 +29,11 @@ This is just a python library of colors, to be used for solarized
 terminals. It just makes things look fancy.
 
 ## `announce`
-This magical thing is a program... THAT WRITES A PROGRAM.
+This magical thing is a program... THAT FREAKIN' WRITES A PROGRAM.
 
-It writes an `announcement` program, and all it does right now is make
-a file that prints the message, then asks if you want it deleted. It
-only works for the person that runs it as of now.
+*Whoo Hoo*
+
+It writes an `announcement` program, and all it does right now is make a file that prints the message, then asks if you want it deleted. It only works for the person that runs it as of now.
 
 ## `exannounce`
 An example of the `announcement` file that would be created with
@@ -44,6 +43,6 @@ An example of the `announcement` file that would be created with
 A very short program to easily delete the `exannounce` file from when
 I was testing.
 
-## There will definitely be more, it's just in the works.
+### There will definitely be more, it's just in the works.
 *Thanks,*
 > *rydens*
