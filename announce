@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-import colors as c
+try: import colors as c
+except ImportError: import skilstak.colors as c
 import os
+
 # This simply allows you to put in a message, and it will send it to
 # an "announcement" file in everyone's bin.
 
@@ -9,9 +11,17 @@ path = '~/repos/multiuser/exannounce'
 print(c.g + 'Enter your message:')
 message = input(c.cyan)
 
+# Checks if there is already a file, if so, deletes it
+if os.path.exists(path):
+    os.system('rm ' + path)
+else:
+    # If not, does nothing
+    pass
+
 # Initial Setup Stuff
 os.system('echo "#!/usr/bin/env python3" >> ' + path)
-os.system('echo "import colors as c" >> ' + path)
+os.system('echo "try: import colors as c" >> ' + path)
+os.system('echo "except ImportError: import skilstak.colors as c" >> ' + path)
 os.system('echo "import os" >> ' + path)
 os.system('echo "" >> ' + path)
 

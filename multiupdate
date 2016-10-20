@@ -6,14 +6,17 @@
 import os
 import colors as c
 
+# The destination; whatever it is, make sure it's in everyone's path. This is what hconfigupdate is for.
+path = '/usr/bin/multiuser/'
+
 def checkconfirm():
     confirm = input(c.r + '> ' + c.cyan)
     if confirm == 'yes':
-        os.system('sudo rm /usr/bin/push')
-        os.system('cp ./push /usr/bin/')
+        os.system('sudo rm -rf ' + path + '*')
+        os.system('sudo cp ./* ' + path)
         print(c.m + 'Done!')
         exit()
-    elif confirm == 'no':
+    elif confirm == 'no' or confim == '':
         print(c.m + 'Okay, thanks for exiting cleanly!')
         exit()
     else:
@@ -24,5 +27,5 @@ if os.getuid() != 0:
     print(c.r + 'Need to run with root privleges!')
 else:
     print(c.g + 'Okay, are you SURE you want to do this?')
-    print(c.g + '"yes" or "no"')
+    print(c.g + '"yes" or "no"/blank')
     checkconfirm()

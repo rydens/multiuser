@@ -35,6 +35,9 @@ This magical thing is a program... THAT FREAKIN' WRITES A PROGRAM.
 
 It writes an `announcement` program, and all it does right now is make a file that prints the message, then asks if you want it deleted. It only works for the person that runs it as of now.
 
+*Please note that the list of users is imported from another source.
+Make your own if you actually use this.*
+
 ## `exannounce`
 An example of the `announcement` file that would be created with
 `announce`.
