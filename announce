@@ -12,11 +12,12 @@ print(c.g + 'Enter your message:')
 message = input(c.cyan)
 
 # Checks if there is already a file, if so, deletes it
-if os.path.exists(path):
-    os.system('rm ' + path)
+# FIX THIS
+if os.path.exists('/home/repos/multiuser/exannounce'):
+    os.system('rm ~/repos/multiuser/exannounce')
 else:
     # If not, does nothing
-    pass
+    print(c.g + 'Old file was not found!')
 
 # Initial Setup Stuff
 os.system('echo "#!/usr/bin/env python3" >> ' + path)

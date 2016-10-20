@@ -1,8 +1,35 @@
 #!/usr/bin/env python3
-import colors as c
+try: import colors as c
+except ImportError: import skilstak.colors as c
 import os
 
-message = 'The Best Announcement System :P'
+message = 'derp'
+
+def confirmdel():
+    delete = input(c.red + '> ' + c.cyan).lower()
+    if delete == 'yes':
+        print(c.g + 'Deleting...')
+        os.system('rm ~/repos/multiuser/exannounce')
+    elif delete == 'no':
+        print(c.g + 'Okay, but if another announcement comes around, stuff will break!')
+        exit()
+    else:
+        print(c.red + 'Sorry, not an answer. Try yes or no.')
+        confirmdel()
+
+
+print(c.g + 'Oops, we got a message!')
+print(c.g + 'Here it is:')
+print(c.magenta + message)
+print()
+print(c.g + 'Would you like to delete it?')
+confirmdel()
+#!/usr/bin/env python3
+try: import colors as c
+except ImportError: import skilstak.colors as c
+import os
+
+message = 'derp'
 
 def confirmdel():
     delete = input(c.red + '> ' + c.cyan).lower()
