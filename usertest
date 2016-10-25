@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import os
-import ~/unames as un
+import /home/ryand/unames as un
 
 for uname in un.usernames:
 	print(uname)
