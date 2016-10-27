@@ -1,6 +1,18 @@
 #!/usr/bin/env python3
+try:	import colors as c
+except ImportError:	import skilstak.colors as c
 import os
 import unames as un
+import sysadmins as sysad
 
+admins = 1
+users = 1
+
+print(c.green + 'Admins')
+for admin in sysad.sysadmins:
+	print(c.cyan + str(admins) + ': ' + c.base3 + str(admin))
+	admins += 1
+print(c.green + 'Users')
 for uname in un.usernames:
-	print(uname)
+	print(c.cyan + str(users) + ': ' + c.base3 + str(uname))
+	users += 1

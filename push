@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
+try:    import colors as c
+except ImportError: import skilstak.colors as c
 import os
-import skilstak.colors as c
 import pwd
 
 welcome = '''
