@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+import os
+
+if os.path.exists('/home/ryand/lib/python/unames.py'):
+    print('Usernames file exists!')
+else:
+    print('No usernames file!')
+
+if os.path.exists('/home/ryand/lib/python/derp.py'):
+    print('Derps exist!')
+else:
+    print('NO DERPS! YAYYY')

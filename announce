@@ -21,6 +21,8 @@ else:
 	for username in un.usernames:
 		path = '/home/' + username + '/announcement'
 		os.system('sudo su - ' + username)
+        if os.path.exists(path):
+            os.system('')
 		os.system('touch ' + path)
 		
 		# Initial Setup Stuff

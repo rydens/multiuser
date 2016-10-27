@@ -24,7 +24,7 @@ else:
 		if os.path.exists('/home/' + username + '/repos/homeconfig'):
 			os.system('cd repos/')
 			os.system('rm -rf home-config/')
-			os.system('git clone https://')
+			os.system('git clone https://github.com/rydens/home-config.git')
 			print(c.cyan + str(username) + c.base3 + "'s home-config was updated!")
 		else:
 			print(c.cyan + str(username) + c.red + "'s home-config could not be found.")
