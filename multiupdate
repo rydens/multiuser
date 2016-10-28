@@ -30,3 +30,7 @@ else:
     print(c.g + 'Okay, are you SURE you want to do this?')
     print(c.g + '"yes" or "no"/blank')
     checkconfirm()
+
+
+    ##### IDEAS
+# List of files, so all aren't pushed
