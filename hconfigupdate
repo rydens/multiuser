@@ -5,6 +5,10 @@ import os
 import unames as un
 import sysadmins as sysad
 
+def confirmcreate():
+	createit = input(c.red + '> ' + c.cyan)
+		if create:
+			pass
 
 # Needs to be run with sudo!
 if os.getuid() != 0:
@@ -28,3 +32,6 @@ else:
 			print(c.cyan + str(username) + c.base3 + "'s home-config was updated!")
 		else:
 			print(c.cyan + str(username) + c.red + "'s home-config could not be found.")
+			print(c.green + 'Should we create it for them?')
+			confirmcreate()
+
