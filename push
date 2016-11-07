@@ -8,7 +8,7 @@ welcome = '''
 Welcome to the magical file pusher!
 
 This will automatically push files to some directory,
-to make things easier so Fisher can get his stuff to
+to make things easier so people can get their stuff to
 the web server area.
 '''
 

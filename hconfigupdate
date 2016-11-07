@@ -7,8 +7,8 @@ import sysadmins as sysad
 
 def confirmcreate():
 	createit = input(c.red + '> ' + c.cyan)
-		if create:
-			pass
+		if createit == 	
+			
 
 # Needs to be run with sudo!
 if os.getuid() != 0:
