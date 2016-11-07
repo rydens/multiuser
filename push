@@ -50,7 +50,7 @@ def checkplace():
         os.system('rm -rf ' + otherpushplace + '*')
         os.system('cp -r ./* ' + otherpushplace)
         print()
-        print(c.m + '*SHOVE*')
+        print(c.m + "Wow, you bully, why'd you shove something?")
         exit()
     elif otherpushplace == 'exit':
         exit()
