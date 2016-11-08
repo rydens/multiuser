@@ -5,6 +5,9 @@ server, even if they are just my friends.
 I wrote everything, so that means that there are probably
 numerous ways to do something better.
 
+Also, there are numerous files that are just there for testing 
+concepts, like `args` or `usertest`, and once I'm finished, they will disappear.
+
 Anyways, on to the contents!
 
 ## `push`
@@ -45,6 +48,21 @@ An example of the `announcement` file that would be created with
 ## `del`
 A very short program to easily delete the `exannounce` file from when
 I was testing.
+
+## `args`
+Me learning how to use arguments properly.
+
+## `argstest`
+A program to test my `args` program.
+
+## `hconfigupdate`
+Something like `multiupdate`; it needs root, and logs on to each user account, from a seperate file, and deletes their `~/repos/home-config` then `git clone`s a new one.
+
+## `pathtest`
+Me testing using `os.path.exists()`
+
+## `usertest`
+My test file for importing a list of usernames from another location; if you want to do this, modify your PYTHONPATH a bit.
 
 ### There will definitely be more, it's just in the works.
 *Thanks,*

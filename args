@@ -1,19 +1,48 @@
 #!/usr/bin/env python3
 import sys
 import colors as c
+import unames as un
 
-usage = c.green + '''
-Arguments:''' + c.cyan + '''
-- troll <user>
-- eat <user>
-- barf <user>
-- nuke <user>
-'''
+usage = c.green + '''Arguments:''' + c.red + '''
+- ''' + c.cyan + '''troll <user>''' + c.red + '''
+- ''' + c.cyan + '''eat <user>''' + c.red + '''
+- ''' + c.cyan + '''barf <user>''' + c.red + '''
+- ''' + c.cyan + '''nuke <user>'''
+
 
 if len(sys.argv) >= 2:
-	print('Arrrrrrrrrggs detected!')
-	if sys.argv[2] == 'troll':
-		print(c.cyan + sys.argv[3] + c.green + ' has been trolled!')
+	if sys.argv[1] == 'troll':
+		if len(sys.argv) >= 3:
+			if sys.argv[2] in un.usernames:
+				print(c.cyan + sys.argv[2] + c.green + ' has been trolled!')
+			else:
+				print(c.red + 'User "' + sys.argv[2] + '" ' 'not found!')
+		else:
+			print(usage)
+	elif sys.argv[1] == 'eat':
+		if len(sys.argv) >= 3:
+			if sys.argv[2] in un.usernames:
+				print(c.cyan + sys.argv[2] + c.green + ' has been trolled!')
+			else:
+				print(c.red + 'User "' + sys.argv[2] + '" ' 'not found!')
+		else:
+			print(usage)
+	elif sys.argv[1] == 'barf':
+		if len(sys.argv) >= 3:
+			if sys.argv[2] in un.usernames:
+				print(c.cyan + sys.argv[2] + c.green + ' has been trolled!')
+			else:
+				print(c.red + 'User "' + sys.argv[2] + '" ' 'not found!')
+		else:
+			print(usage)
+	elif sys.argv[1] == 'nuke':
+		if len(sys.argv) >= 3:
+			if sys.argv[2] in un.usernames:
+				print(c.cyan + sys.argv[2] + c.green + ' has been trolled!')
+			else:
+				print(c.red + 'User "' + sys.argv[2] + '" ' 'not found!')
+		else:
+			print(usage)		
 	else:
 		print(usage)
 else:

@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+import os
+
+# This is a program to test my "args" program
+# Usernames are fake
+
+os.system('args')
+os.system('args troll')
+os.system('args eat')
+os.system('args barf')
+os.system('args nuke')
+os.system('args troll jimmy22')
+os.system('args troll jimmy37')
+os.system('args eat jimmy22')
+os.system('args eat jimmy37')
+os.system('args barf jimmy22')
+os.system('args barf jimmy37')
+os.system('args nuke jimmy22')
+os.system('args nuke jimmy37')
