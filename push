@@ -32,7 +32,7 @@ def pushplace():
         os.system('rm -rf /var/www/html/' + uname + '/*')
         os.system('cp -r ./* /var/www/html/' + uname + '/')
         print()
-        print(c.m + '*SHOVE*')
+        print(c.m + "Wow, you bully, why'd you shove something?")
         exit()
     elif place == 'no':
         print(c.g + '''Okay, put the path of the directory, 
