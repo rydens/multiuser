@@ -34,4 +34,3 @@ else:
 			print(c.cyan + str(username) + c.red + "'s home-config could not be found.")
 			print(c.green + 'Should we create it for them?')
 			confirmcreate()
-
