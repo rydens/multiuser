@@ -1,0 +1,71 @@
+#!/usr/bin/env python3
+try:    import colors as c
+except ImportError: import skilstak.colors as c
+import os
+import pwd
+
+welcome = '''
+Welcome to the magical file pusher!
+
+This will automatically push files to some directory,
+to make things easier so people can get their stuff to
+the web server area.
+'''
+
+uname = pwd.getpwuid(os.getuid()).pw_name
+
+def confirmpush():
+    pushconfirm = input(c.r + '> ' + c.cyan)
+    if pushconfirm == 'push':
+        print(c.g + 'Okay! Target directory:')
+    elif pushconfirm == 'exit':
+        print(c.g + 'Okay, cd into another one, then push!')
+        exit()
+    else:
+        print(c.r + 'Not a command. Try "push" or "exit".')
+        confirmpush()
+
+def pushplace():
+    print(c.g + 'Do you want to push here? "yes" or "no".')
+    place = input(c.r + '> ' + c.cyan)
+    if place == 'yes':
+        os.system('rm -rf /var/www/html/' + uname + '/*')
+        os.system('cp -r ./* /var/www/html/' + uname + '/')
+        print()
+        print(c.m + "Wow, you bully, why'd you shove something?")
+        exit()
+    elif place == 'no':
+        print(c.g + '''Okay, put the path of the directory, 
+and make sure to put a slash at the end:''')
+        checkplace()
+    elif place == 'exit':
+        exit()
+    else:
+        print(c.r + 'Not a choice. Use "yes" or "no".')
+        pushplace()
+
+def checkplace():
+    otherpushplace = input(c.r + '> ' + c.cyan)
+    if os.path.exists(otherpushplace):
+        os.system('rm -rf ' + otherpushplace + '*')
+        os.system('cp -r ./* ' + otherpushplace)
+        print()
+        print(c.m + "Wow, you bully, why'd you shove something?")
+        exit()
+    elif otherpushplace == 'exit':
+        exit()
+    else:
+        print(c.g + "It doesn't exist! Try again!")
+        checkplace()
+
+if __name__ == '__main__':
+    print(c.g + welcome)
+    print(c.g + 'Your current place, ' + c.m + uname + c.g + ':')
+    os.system('pwd')
+    print()
+    print(c.g + '''You will push this directory. If you want
+to push another, type "exit" and then go into the directory
+you want to push. Otherwise, type "push".''')
+    confirmpush()
+    print(c.g + 'Default: /var/www/html/' + uname)
+    pushplace()

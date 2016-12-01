@@ -5,32 +5,36 @@
 try:    import colors as c
 except ImportError: import skilstak.colors as c
 import os
+import sysadmins
+from sys import argv
 
 
 # The destination; whatever it is, make sure it's in everyone's path. This is what hconfigupdate is for.
 path = '/usr/bin/multiuser/'
+usage = c.g + '''Update the contents of ''' + c.m + '''/usr/bin/multiuser''' + c.g + '''!
+Usage:''' + c.r + '''
+- ''' + c.m + '''muliupdate -all''' + c.cyan + ''': Updates EVERYTHING in the destination''' + c.r + '''
+- ''' + c.m + '''muliupdate <''' + c.blue + '''filename''' + c.m + '''>''' + c.cyan + ''': Updates only that file.'''
 
-def checkconfirm():
-    confirm = input(c.r + '> ' + c.cyan)
-    if confirm == 'yes':
-        os.system('sudo rm -rf ' + path + '*')
-        os.system('sudo cp ./* ' + path)
-        print(c.m + 'Done!')
-        exit()
-    elif confirm == 'no' or confim == '':
-        print(c.m + 'Okay, thanks for exiting cleanly!')
-        exit()
-    else:
-        print(c.r + 'Invalid command! Try "yes" or "no".')
-        checkconfirm()
-
+# Checks if you're root
 if os.getuid() != 0:
     print(c.r + 'Need to run with root privleges!')
 else:
-    print(c.g + 'Okay, are you SURE you want to do this?')
-    print(c.g + '"yes" or "no"/blank')
-    checkconfirm()
 
-
-    ##### IDEAS
-# List of files, so all aren't pushed
+    if len(argv) == 2:
+        if argv[1] == '-all':
+            os.system('sudo rm -rf ' + path + '*')
+            os.system('sudo cp /home/' + sysadmins.sysadmins[0] + '/repos/multiuser/* ' + path)
+            print(c.m + 'Done!')
+            exit()
+        elif argv[1] != '-all' and os.path.exists('/home/' + sysadmins.sysadmins[0] + '/repos/multiuser/' + argv[1]):
+            os.system('sudo rm -rf ' + path + argv[1])
+            os.system('sudo cp /home/' + sysadmins.sysadmins[0] + '/repos/multiuser/' + argv[1] + ' ' + path)
+        else:
+            if argv[1] != '-all' and not os.path.exists(argv[1]):
+                print(c.r + 'File not found!')
+                exit()
+            else:
+                print(usage)
+    else:
+        print(usage)
