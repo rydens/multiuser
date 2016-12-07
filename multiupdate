@@ -11,10 +11,10 @@ from sys import argv
 
 # The destination; whatever it is, make sure it's in everyone's path. This is what hconfigupdate is for.
 path = '/usr/bin/multiuser/'
-usage = c.g + '''Update the contents of ''' + c.m + '''/usr/bin/multiuser''' + c.g + '''!
-Usage:''' + c.r + '''
-- ''' + c.m + '''muliupdate -all''' + c.cyan + ''': Updates EVERYTHING in the destination''' + c.r + '''
-- ''' + c.m + '''muliupdate <''' + c.blue + '''filename''' + c.m + '''>''' + c.cyan + ''': Updates only that file.'''
+usage = '''{}Update the contents of {}/usr/bin/multiuser!
+Usage:{}
+- {}muliupdate -all{}: Updates EVERYTHING in the destination{}
+- {}muliupdate <{}filename{}>{}: Updates only that file.'''.format(c.g,c.m,c.g,c.r,c.m,c.cyan,c.r,c.m,c.blue,c.m,c.cyan)
 
 # Checks if you're root
 if os.getuid() != 0:

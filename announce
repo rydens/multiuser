@@ -22,7 +22,7 @@ else:
 		path = '/home/' + username + '/announcement'
 		os.system('sudo su - ' + username)
         if os.path.exists(path):
-            os.system('')
+            os.system('rm ' + path)
 		os.system('touch ' + path)
 		
 		# Initial Setup Stuff
