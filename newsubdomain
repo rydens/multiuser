@@ -4,7 +4,7 @@ except ImportError:	import skilstak.colors as c
 import os
 from sys import argv
 
-usage = c.g + '''Makes a new subdomain for nginx, then adds a letsencrypt.org certificate!
+usage = c.g + '''Makes a new subdomain for nginx, then adds a letsencrypt.org HTTPS certificate!
 Usage:
 newsubdomain <domain> <subdomain name> <root for it> <name of conf file>'''
 
