@@ -33,7 +33,7 @@ if len(argv) >= 2:
 		print(c.m + confirmation)
 	elif argv[1] == 'default':
 		os.system('rm -rf /var/www/html/' + uname + '/*')
-		os.system('cp ./* /var/www/html/')
+		os.system('cp -r ./* /var/www/html/' + uname + '/')
 	else:
 		print(c.r + 'Directory not found!')
 		print(usage)
