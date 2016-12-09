@@ -29,7 +29,7 @@ You’re just so disgusting! I can’t even look at you! Just go away and never 
 if len(argv) >= 2:
 	if os.path.exists(argv[1]):
 		os.system('rm -rf ' + argv[1] + '/*')
-		os.system('cp -R ./* ' + argv[1] + '/')
+		os.system('cp -r ./* ' + argv[1] + '/')
 		print(c.m + confirmation)
 	elif argv[1] == 'default':
 		os.system('rm -rf /var/www/html/' + uname + '/*')
