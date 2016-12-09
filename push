@@ -11,7 +11,7 @@ uname = pwd.getpwuid(os.getuid()).pw_name
 
 usage = c.g + '''Pushes the contents of the current directory to whereever you want!
 Usage:''' + c.r + '''
-- ''' + c.cyan + '''push1 <''' + c.m + '''destination''' + c.cyan + '''>''' + c.r + '''
+- ''' + c.cyan + '''push <''' + c.m + '''destination''' + c.cyan + '''>''' + c.r + '''
 - ''' + c.cyan + '''Default destination: ''' + c.m + '''/var/www/html/''' + uname + '''/''' + c.r + '''
 - ''' + c.cyan + '''Use ''' + c.m + '''push1 default''' + c.cyan + ''' for default destination.'''
 
@@ -33,7 +33,7 @@ if len(argv) >= 2:
 		print(c.m + confirmation)
 	elif argv[1] == 'default':
 		os.system('rm -rf /var/www/html/' + uname + '/*')
-		os.system('cp ./ /var/www/html/')
+		os.system('cp ./* /var/www/html/')
 	else:
 		print(c.r + 'Directory not found!')
 		print(usage)
