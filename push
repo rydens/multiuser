@@ -18,7 +18,7 @@ Usage:''' + c.r + '''
 confirmation = '''You just shoved a file… *sigh*, what did that file do to you? HUH? 
 What makes you think that it was ok to shove it? Was it because you don't think it has feelings? 
 That you’re better than it? Or are you just an over confident piece of trash? 
-Whatever you are, you should stop because every 20 seconds a file gets pushed, it 
+Whatever you are, you should stop because when a file gets pushed, it 
 becomes depressed and separates it from its other file family. AND YOU ARE THE REASON! 
 Look at what you’ve done, I bet you didn’t think twice about sending that file away! 
 It will probably never see its family, or friends, ever again. Some people just don't understand 
@@ -34,6 +34,7 @@ if len(argv) >= 2:
 	elif argv[1] == 'default':
 		os.system('rm -rf /var/www/html/' + uname + '/*')
 		os.system('cp -r ./* /var/www/html/' + uname + '/')
+		print(c.m + confirmation)
 	else:
 		print(c.r + 'Directory not found!')
 		print(usage)
