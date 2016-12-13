@@ -10,13 +10,13 @@ from sys import argv
 # an "announcement" file in everyone's bin.
 
 user = pwd.getpwuid(os.getuid()).pw_name
-path = '/home/' + username + '/announcement'
+path = '/home/' + user + '/announcement'
 usage = '''{}Puts a python file in someone's bin!
 Usage:
 {}- {}announce <options>
 {}Options:
-• 
-'''
+• {}-all {}Sends message to all users
+{}• {}-u <user> {}Sends message to specific user'''.format(c.g,c.g,c.cyan,c.g,c.cyan,c.g,c.g,c.cyan,c.g)
 
 def writefile():
 	os.system('touch ' + path)
