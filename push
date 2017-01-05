@@ -15,7 +15,7 @@ Usage:''' + c.r + '''
 - ''' + c.cyan + '''push <''' + c.m + '''destination''' + c.cyan + '''>''' + c.r + '''
 - ''' + c.cyan + '''Default destination: ''' + c.m + '''/var/www/html/''' + uname + '''/''' + c.r + '''
 - ''' + c.cyan + '''Use ''' + c.m + '''push default''' + c.cyan + ''' for default destination.''' + c.r + '''
-- ''' + c.cyan + '''Use ''' + c.m + '''push www''' + c.cyan + ''' to automatically go to your ''' + c.m + '''www ''' + c.cyan '''directory,
+- ''' + c.cyan + '''Use ''' + c.m + '''push www''' + c.cyan + ''' to automatically go to your ''' + c.m + '''www ''' + c.cyan + '''directory,
   then pushes from there, no matter where you are.'''
 
 confirmation = '''You just shoved a file… *sigh*, what did that file do to you? HUH? 
