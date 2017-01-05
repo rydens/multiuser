@@ -2,6 +2,7 @@
 # Push, NOW WITH ARGUMENTS :D
 import os
 import pwd
+import time as t
 from sys import argv
 try:	import colors as c
 except ImportError:	import skilstak.colors as c
@@ -13,7 +14,9 @@ usage = c.g + '''Pushes the contents of the current directory to whereever you w
 Usage:''' + c.r + '''
 - ''' + c.cyan + '''push <''' + c.m + '''destination''' + c.cyan + '''>''' + c.r + '''
 - ''' + c.cyan + '''Default destination: ''' + c.m + '''/var/www/html/''' + uname + '''/''' + c.r + '''
-- ''' + c.cyan + '''Use ''' + c.m + '''push default''' + c.cyan + ''' for default destination.'''
+- ''' + c.cyan + '''Use ''' + c.m + '''push default''' + c.cyan + ''' for default destination.''' + c.r + '''
+- ''' + c.cyan + '''Use ''' + c.m + '''push www''' + c.cyan + ''' to automatically go to your ''' + c.m + '''www ''' + c.cyan '''directory,
+  then pushes from there, no matter where you are.'''
 
 confirmation = '''You just shoved a file… *sigh*, what did that file do to you? HUH? 
 What makes you think that it was ok to shove it?
@@ -22,10 +25,11 @@ That you’re better than it? Or are you just an over confident piece of trash?
 Whatever you are, you should stop because when a file gets pushed, it 
 becomes depressed and separates it from its other file family. 
 AND YOU ARE THE REASON! Look at what you’ve done, I bet you didn’t 
-think twice about sending that file away! It will probably never see its family, 
+think twice about sending that file away! It will probably never see its family,
 or friends, ever again. Some people just don't understand what it’s like. 
-What if you were put on the spotlight and then sent away never to return, how would you feel? 
-You’re just so disgusting! I can’t even look at you! Just go away and never do it again!'''
+What if you were put on the spotlight and then sent away never to return, 
+how would you feel? You’re just so disgusting! I can’t even look at you! 
+Just go away and never do it again!'''
 
 
 if len(argv) >= 2:
@@ -37,6 +41,11 @@ if len(argv) >= 2:
 		os.system('rm -rf /var/www/html/' + uname + '/*')
 		os.system('cp -r ./* /var/www/html/' + uname + '/')
 		print(c.m + confirmation)
+	elif argv[1] == 'www':
+		os.system('cd /home/' + uname + '/www/')
+		os.system('push default')
+		t.sleep(1)
+		os.system('cd -')
 	else:
 		print(c.r + 'Directory not found!')
 		print(usage)

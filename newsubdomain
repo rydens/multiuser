@@ -6,7 +6,7 @@ from sys import argv
 
 usage = c.g + '''Makes a new subdomain for nginx, then adds a letsencrypt.org HTTPS certificate!
 Usage:
-newsubdomain <domain> <subdomain name> <root for it> <name of conf file>'''
+newsubdomain <{}domain{}> <{}subdomain name{}> <{}root for it{}> <{}name of conf file{}>'''.format(c.m,c.cyan,c.m,c.cyan,c.m,c.cyan,c.m,c.cyan)
 
 def makesubdomain():
 	os.system('sudo service nginx stop')
@@ -17,7 +17,7 @@ def makesubdomain():
 	os.system('''echo "  ssl_certificate_key /etc/letsencrypt/live/{}.{}/privkey.pem;" >> /etc/nginx/sites-available/'''.format(argv[2],argv[1]) + argv[4])
 	os.system('''echo "  server_name {}.{};" >> /etc/nginx/sites-available/'''.format(argv[2],argv[1]) + argv[4])
 	os.system('''echo "  root {};" >> /etc/nginx/sites-available/'''.format(argv[3]) + argv[4])
-	os.system('''echo "  location / {" >> /etc/nginx/sites-available/''' + argv[4]))
+	os.system('''echo "  location / {" >> /etc/nginx/sites-available/''' + argv[4])
 	os.system('''echo "    index index.html;" >> /etc/nginx/sites-available/''' + argv[4])
 	os.system('''echo "  }" >> /etc/nginx/sites-available/''' + argv[4])
 	os.system('''echo "}\n" >> /etc/nginx/sites-available/''' + argv[4])
