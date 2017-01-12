@@ -6,7 +6,7 @@ import unames as un
 import sysadmins as sysad
 
 def confirmcreate():
-	createit = input(c.red + '> ' + c.cyan)
+	createit = input(c.red + '> ' + c.cyan + c.blue)
 	if createit == 	'y' or createit == 'yes':
 		# Git clone the home-config
 		os.system('cd /home/' + username + '/repos/')
@@ -20,7 +20,7 @@ def confirmcreate():
 if os.getuid() != 0:
     print(c.r + 'Need to run with root privleges!')
 else:
-	print(c.green + 'Updating all home-configs...')
+	print(c.green + 'Updating all home-configs...' + c.blue)
 	
 	# Removes admins from the list of people to update
 	for sysadmin in sysad.sysadmins:
@@ -35,7 +35,7 @@ else:
 			os.system('rm -rf home-config/')
 			os.system('git clone https://github.com/rydens/home-config.git')
 			os.system('cd home-config; . bashrc')
-			print(c.cyan + str(username) + c.base3 + "'s home-config was updated!")
+			print(c.cyan + str(username) + c.base3 + "'s home-config was updated!" + c.blue)
 		else:
 			print(c.cyan + str(username) + c.red + "'s home-config could not be found.")
 			print(c.green + 'Should we create it for them?')
