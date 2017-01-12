@@ -37,7 +37,7 @@ else:
 					makesubdomain()
 				else:
 					print(c.r + 'Configurations file not found!')
-					exit()
+					exit() 
 			else:
 				print(c.r + 'Root area not found!')
 				exit()
