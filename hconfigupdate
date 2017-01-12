@@ -11,7 +11,6 @@ def confirmcreate():
 		# Git clone the home-config
 		os.system('cd /home/' + username + '/repos/')
 		os.system('git clone https://github.com/rydens/home-config')
-		continue
 			
 
 # Needs to be run with sudo!
