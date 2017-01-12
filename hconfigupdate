@@ -7,11 +7,11 @@ import sysadmins as sysad
 
 def confirmcreate():
 	createit = input(c.red + '> ' + c.cyan)
-		if createit == 	'y' or createit == 'yes':
-			# Git clone the home-config
-			os.system('cd /home/' + username + '/repos/')
-			os.system('git clone https://github.com/rydens/home-config')
-			continue
+	if createit == 	'y' or createit == 'yes':
+		# Git clone the home-config
+		os.system('cd /home/' + username + '/repos/')
+		os.system('git clone https://github.com/rydens/home-config')
+		continue
 			
 
 # Needs to be run with sudo!
