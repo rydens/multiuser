@@ -11,6 +11,7 @@ def confirmcreate():
 		# Git clone the home-config
 		os.system('cd /home/' + username + '/repos/')
 		os.system('git clone https://github.com/rydens/home-config')
+		# Will still have to run './setup' manually, though
 	else:
 		pass
 			
@@ -29,11 +30,11 @@ else:
 	# Logs in to each user, then checks for the file.
 	# Tries to make it if it doesn't exist
 	for username in un.usernames:
-		os.system('sudo su - ' + username)
 		if os.path.exists('/home/' + username + '/repos/home-config'):
-			os.system('cd repos/')
+			os.system('cd /home/' + username + '/repos/')
 			os.system('rm -rf home-config/')
 			os.system('git clone https://github.com/rydens/home-config.git')
+			os.system('cd home-config; . bashrc')
 			print(c.cyan + str(username) + c.base3 + "'s home-config was updated!")
 		else:
 			print(c.cyan + str(username) + c.red + "'s home-config could not be found.")
