@@ -11,6 +11,8 @@ def confirmcreate():
 		# Git clone the home-config
 		os.system('cd /home/' + username + '/repos/')
 		os.system('git clone https://github.com/rydens/home-config')
+	else:
+		pass
 			
 
 # Needs to be run with sudo!
@@ -28,7 +30,7 @@ else:
 	# Tries to make it if it doesn't exist
 	for username in un.usernames:
 		os.system('sudo su - ' + username)
-		if os.path.exists('/home/' + username + '/repos/homeconfig'):
+		if os.path.exists('/home/' + username + '/repos/home-config'):
 			os.system('cd repos/')
 			os.system('rm -rf home-config/')
 			os.system('git clone https://github.com/rydens/home-config.git')
