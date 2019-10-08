@@ -8,15 +8,25 @@ import sysadmins as sysad
 def confirmcreate():
 	createit = input(c.red + '> ' + c.cyan + c.blue)
 	if createit == 	'y' or createit == 'yes':
-		#if os.path.exists('/home/' + username + '/'):
-			#os.system('cd /home/' + username + '/repos/')
-			#os.system('git clone https://github.com/rydens/home-config')
-			# Will still have to run './setup' manually, though
-		print(username)
+		if os.path.exists('/home/' + username + '/'):
+				if os.path.exists('/home/' + username + '/repos/'):
+					os.system('cd /home/' + username + '/repos/')
+					os.system('rm -rf home-config')	# Just in case	# Hey, look, my first in-line comment!
+					os.system('git clone https://github.com/rydens/home-config')
+					# Will still have to run './setup' manually, though
+				else:
+					os.system('cd /home/' + username + '/')
+					os.system('mkdir repos')
+					os.system('cd /home/' + username + '/repos/')
+					os.system('rm -rf home-config')
+					os.system('git clone https://github.com/rydens/home-config')
+		else:
+			print(c.red + '"' + username + '" is not a user!' + c.blue)
 	elif createit == 'n' or createit == 'no':
 		pass
 	else:
 		print(c.red + "Not a choice! 'y' or 'n'" + c.blue)
+		confirmcreate()
 			
 
 # Needs to be run with sudo!
